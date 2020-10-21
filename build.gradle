@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+
+/* 디펜던시들(라이브러리)들을 다운받는 위치 지정 -> 메이븐 중앙 저장소 */
+repositories {
+	mavenCentral()
+}
+/*
+	Gradle 빌드 도구는 의존관계가 있는 라이브러리를 함께 다운로드합니다.
+ */
+
+// 라이브러리 목록, 프로젝트 생성 시 추가한 Dependency들 목록
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'		// thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-web'			// Spring Web
+
+	// 서버를 재시작 하지 않고 VIEW를 재컴파일(Ctrl+Shift+F9)만 하면 반영되도록 도와주는 라이브러리
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
