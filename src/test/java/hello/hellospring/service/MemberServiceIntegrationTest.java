@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,6 +27,7 @@ class MemberServiceIntegrationTest {
 
     // 테스트는 영어권 회사가 아니라면 직관적으로 한글로도 가능, 빌드 될때 테스트는 포함안됌
     @Test
+//    @Commit // 테스트 값을 DB에 반영하는 어노테이션
     void 회원가입() {
         // given
         Member member = new Member();

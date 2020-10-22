@@ -25,9 +25,10 @@ dependencies {
 	// 서버를 재시작 하지 않고 VIEW를 재컴파일(Ctrl+Shift+F9)만 하면 반영되도록 도와주는 라이브러리
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
-	// jdbc, h2 데이터베이스 관련 라이브러리 추가
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	runtimeOnly 'com.h2database:h2'
+	// jdbc, jpa, h2 데이터베이스 관련 라이브러리 추가
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'		// jdbc
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'	// jpa
+	runtimeOnly 'com.h2database:h2'											// h2
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
