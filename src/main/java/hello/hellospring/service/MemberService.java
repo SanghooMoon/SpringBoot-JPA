@@ -13,12 +13,11 @@ import java.util.Optional;
     테스트를 편하게 자동으로 하는 팁
     구현한 클래스에서 Ctrl + Shift + T -> Test 클래스 자동 생성
  */
-@Service
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
